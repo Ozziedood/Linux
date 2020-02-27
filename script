@@ -10,6 +10,7 @@ mkdir -R /var/public/devops/projects
 groupadd sales
 groupadd techs
 groupadd devops
+groupadd looneytunes
 
 chmod -R 770 /var/public/sales
 chgrp -R sales /var/public/sales
@@ -22,7 +23,8 @@ cp /etc/skel /etc/skel-sales
 cp /etc/skel /etc/skel-techs
 cp /etc/skel /etc/skel-devops
 
-echo "function ipconfig(){\nip addr | grep -v inet6 | grep -v 127.0.0.1 | awk'{print"IP Address:"$2}'\nip route | grep default | awk'{print"Default Gateway:"$3}'\n} >> /etc/skel-sales/.bashrc
+echo "function ipconfig(){\nip addr | grep -v inet6 | grep -v 127.0.0.1 | awk'{print"IP Address:"$2}'\nip route | grep default | awk'{print"Default Gateway:"$3}'\n}" >> /etc/skel-sales/.bashrc
 
 echo "phrase='That\'s All Folks'\nexport phrase" >> /etc/skel-techs/.bash_profile
 
+useradd -c "Bugs Bunny" -g sales -G looneytunes -m -d home/SALES /etc/skel-sales
