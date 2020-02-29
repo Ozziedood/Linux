@@ -1,11 +1,11 @@
 touch "Osvaldo Perez"
 
-mkdir -R /var/public/sales/data
-mkdir /var/public/sales/projects
-mkdir -R /var/public/techs/data
-mkdir /var/public/techs/projects
-mkdir -R /var/public/devops/data
-mkdir /var/public/devops/projects
+mkdir -p /var/public/sales/data
+mkdir -p /var/public/sales/projects
+mkdir -p /var/public/techs/data
+mkdir -p /var/public/techs/projects
+mkdir -p /var/public/devops/data
+mkdir -p /var/public/devops/projects
 
 groupadd sales
 groupadd techs
