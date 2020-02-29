@@ -1,11 +1,11 @@
 touch "Osvaldo Perez"
 
 mkdir -R /var/public/sales/data
-mkdir -R /var/public/sales/projects
+mkdir /var/public/sales/projects
 mkdir -R /var/public/techs/data
-mkdir -R /var/public/techs/projects
+mkdir /var/public/techs/projects
 mkdir -R /var/public/devops/data
-mkdir -R /var/public/devops/projects
+mkdir /var/public/devops/projects
 
 groupadd sales
 groupadd techs
@@ -23,8 +23,59 @@ cp /etc/skel /etc/skel-sales
 cp /etc/skel /etc/skel-techs
 cp /etc/skel /etc/skel-devops
 
-echo "function ipconfig(){\nip addr | grep -v inet6 | grep -v 127.0.0.1 | awk'{print"IP Address:"$2}'\nip route | grep default | awk'{print"Default Gateway:"$3}'\n}" >> /etc/skel-sales/.bashrc
+printf "function ipconfig(){\nip addr | grep -v inet6 | grep -v 127.0.0.1 | awk'{print"IP Address:"$2}'\nip route | grep default | awk'{print"Default Gateway:"$3}'\n}" >> /etc/skel-sales/.bashrc
 
-echo "phrase='That\'s All Folks'\nexport phrase" >> /etc/skel-techs/.bash_profile
+printf "phrase='That\'s All Folks'\nexport phrase" >> /etc/skel-techs/.bash_profile
 
-useradd -c "Bugs Bunny" -g sales -G looneytunes -m -d home/SALES /etc/skel-sales
+mkdir -R /home/SALES/bbunny
+
+useradd -c "Bugs Bunny" -g sales -G looneytunes -m -d home/SALES/bbunny -k /etc/skel-sales bbunny
+echo Pa11word | passwd --stdin bbunny
+
+mkdir /home/SALES/tdevil
+useradd -c "Tasmanian Devil" -g sales -G looneytunes -m -d home/SALES/tdevil -k /etc/skel-sales tdevil
+echo Pa11word | passwd --stdin tdevil
+
+mkdir /home/SALES/mmartian
+useradd -c "Marvin the Martian" -g sales -G looneytunes -m -d home/SALES/mmartian -k /etc/skel-sales mmartian
+echo Pa11word | passwd --stdin mmartian
+
+mkdir /home/SALES/sylvester
+useradd -c "Sylvester" -g sales -G looneytunes -m -d home/SALES/sylvester -k /etc/skel-sales sylvester
+echo Pa11word | passwd --stdin sylvester
+
+mkdir -R /home/TECHS/ysam
+useradd -c "Yosemite Sam" -g techs -G looneytunes -m -d home/TECHS/ysam -k /etc/skel-techs ysam
+echo Pa11word | passwd --stdin ysam
+
+mkdir /home/TECHS/sgonzales
+useradd -c "Speedy Gonzales" -g techs -G looneytunes -m -d home/TECHS/sgonzales -k /etc/skel-techs sgonzales
+echo Pa11word | passwd --stdin sgonzales
+
+mkdir /home/TECHS/ppew
+useradd -c "Pepe Le Pew" -g techs -G looneytunes -m -d home/TECHS/ppew -k /etc/skel-techs ppew
+echo Pa11word | passwd --stdin ppew
+
+mkdir /home/TECHS/wcoyote
+useradd -c "Wile E. Coyote" -g techs -G looneytunes -m -d home/TECHS/wcoyote -k /etc/skel-techs wcoyote
+echo Pa11word | passwd --stdin wcoyote
+
+mkdir -R /home/DEVOPS/fleghorn
+useradd -c "Foghorn Leghorn" -g devops -G looneytunes -m -d home/DEVOPS/fleghorn -k /etc/skel-devops fleghorn
+echo Pa11word | passwd --stdin fleghorn
+
+mkdir /home/DEVOPS/efudd
+useradd -c "Elmer Fudd" -g devops -G looneytunes -m -d home/DEVOPS/efudd -k /etc/skel-devops efudd
+echo Pa11word | passwd --stdin efudd
+
+mkdir /home/DEVOPS/tweety
+useradd -c "Tweety" -g devops -G looneytunes -m -d home/DEVOPS/tweety -k /etc/skel-devops tweety
+echo Pa11word | passwd --stdin tweety
+
+mkdir -R /home/DEVOPS/ppig
+useradd -c "Porky Pig" -g devops -G looneytunes -m -d home/DEVOPS/ppig -k /etc/skel-devops ppig
+echo Pa11word | passwd --stdin ppig
+
+
+
+
