@@ -24,8 +24,8 @@ cp -r /etc/skel /etc/skel-techs
 cp -r /etc/skel /etc/skel-devops
 
 echo "function ipconfig(){" >> /etc/skel-sales/.bashrc
-echo "ip addr | grep -v inet6 | grep -v 127.0.0.1 | awk'{print/"IP Address:/"$2}'" >> /etc/skel-sales/.bashrc
-echo "ip route | grep default | awk'{print/"Default Gateway:/"$3}'" >> /etc/skel-sales/.bashrc
+echo "ip addr | grep -v inet6 | grep -v 127.0.0.1 | awk'{print\"IP Address:\"$2}'" >> /etc/skel-sales/.bashrc
+echo "ip route | grep default | awk'{print\"Default Gateway:\"$3}'" >> /etc/skel-sales/.bashrc
 echo "}" >> /etc/skel-sales/.bashrc
 
 printf "phrase='That\'s All Folks'\nexport phrase" >> /etc/skel-techs/.bash_profile
