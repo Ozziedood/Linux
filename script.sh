@@ -19,15 +19,15 @@ chgrp -R techs /var/public/techs
 chmod -R 770 /var/public/devops
 chgrp -R devops /var/public/devops
 
-cp /etc/skel /etc/skel-sales
-cp /etc/skel /etc/skel-techs
-cp /etc/skel /etc/skel-devops
+cp -r /etc/skel /etc/skel-sales
+cp -r /etc/skel /etc/skel-techs
+cp -r /etc/skel /etc/skel-devops
 
 printf "function ipconfig(){\nip addr | grep -v inet6 | grep -v 127.0.0.1 | awk'{print"IP Address:"$2}'\nip route | grep default | awk'{print"Default Gateway:"$3}'\n}" >> /etc/skel-sales/.bashrc
 
 printf "phrase='That\'s All Folks'\nexport phrase" >> /etc/skel-techs/.bash_profile
 
-mkdir -R /home/SALES/bbunny
+mkdir -p /home/SALES/bbunny
 chgrp -R sales /home/SALES
 useradd -c "Bugs Bunny" -g sales -G looneytunes -m -d home/SALES/bbunny -k /etc/skel-sales bbunny
 echo Pa11word | passwd --stdin bbunny
@@ -44,7 +44,7 @@ mkdir /home/SALES/sylvester
 useradd -c "Sylvester" -g sales -G looneytunes -m -d home/SALES/sylvester -k /etc/skel-sales sylvester
 echo Pa11word | passwd --stdin sylvester
 
-mkdir -R /home/TECHS/ysam
+mkdir -p /home/TECHS/ysam
 chgrp -R techs /home/TECHS
 useradd -c "Yosemite Sam" -g techs -G looneytunes -m -d home/TECHS/ysam -k /etc/skel-techs ysam
 echo Pa11word | passwd --stdin ysam
@@ -61,7 +61,7 @@ mkdir /home/TECHS/wcoyote
 useradd -c "Wile E. Coyote" -g techs -G looneytunes -m -d home/TECHS/wcoyote -k /etc/skel-techs wcoyote
 echo Pa11word | passwd --stdin wcoyote
 
-mkdir -R /home/DEVOPS/fleghorn
+mkdir -p /home/DEVOPS/fleghorn
 chgrp -R devops /home/DEVOPS
 useradd -c "Foghorn Leghorn" -g devops -G looneytunes -m -d home/DEVOPS/fleghorn -k /etc/skel-devops fleghorn
 echo Pa11word | passwd --stdin fleghorn
@@ -74,7 +74,7 @@ mkdir /home/DEVOPS/tweety
 useradd -c "Tweety" -g devops -G looneytunes -m -d home/DEVOPS/tweety -k /etc/skel-devops tweety
 echo Pa11word | passwd --stdin tweety
 
-mkdir -R /home/DEVOPS/ppig
+mkdir /home/DEVOPS/ppig
 useradd -c "Porky Pig" -g devops -G looneytunes -m -d home/DEVOPS/ppig -k /etc/skel-devops ppig
 echo Pa11word | passwd --stdin ppig
 
