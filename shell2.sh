@@ -33,42 +33,42 @@ mkdir -p /home/DEVOPS
 
 
 chgrp -R sales /home/SALES
-useradd -c "Bugs Bunny" -g sales -G looneytunes -m -d /home/SALES/bbunny -k /etc/skel-sales bbunny
+useradd -c "Bugs Bunny" -g sales -G looneytunes -m -d /home/SALES -k /etc/skel-sales bbunny
 echo Pa11word | passwd --stdin bbunny
 
-useradd -c "Tasmanian Devil" -g sales -G looneytunes -m -d /home/SALES/tdevil -k /etc/skel-sales tdevil
+useradd -c "Tasmanian Devil" -g sales -G looneytunes -m -d /home/SALES -k /etc/skel-sales tdevil
 echo Pa11word | passwd --stdin tdevil
 
-useradd -c "Marvin the Martian" -g sales -G looneytunes -m -d /home/SALES/mmartian -k /etc/skel-sales mmartian
+useradd -c "Marvin the Martian" -g sales -G looneytunes -m -d /home/SALES -k /etc/skel-sales mmartian
 echo Pa11word | passwd --stdin mmartian
 
-useradd -c "Sylvester" -g sales -G looneytunes -m -d /home/SALES/sylvester -k /etc/skel-sales sylvester
+useradd -c "Sylvester" -g sales -G looneytunes -m -d /home/SALES -k /etc/skel-sales sylvester
 echo Pa11word | passwd --stdin sylvester
 
 chgrp -R techs /home/TECHS
-useradd -c "Yosemite Sam" -g techs -G looneytunes -m -d /home/TECHS/ysam -k /etc/skel-techs ysam
+useradd -c "Yosemite Sam" -g techs -G looneytunes -m -d /home/TECHS -k /etc/skel-techs ysam
 echo Pa11word | passwd --stdin ysam
 
-useradd -c "Speedy Gonzales" -g techs -G looneytunes -m -d /home/TECHS/sgonzales -k /etc/skel-techs sgonzales
+useradd -c "Speedy Gonzales" -g techs -G looneytunes -m -d /home/TECHS -k /etc/skel-techs sgonzales
 echo Pa11word | passwd --stdin sgonzales
 
-useradd -c "Pepe Le Pew" -g techs -G looneytunes -m -d /home/TECHS/ppew -k /etc/skel-techs ppew
+useradd -c "Pepe Le Pew" -g techs -G looneytunes -m -d /home/TECHS -k /etc/skel-techs ppew
 echo Pa11word | passwd --stdin ppew
 
-useradd -c "Wile E. Coyote" -g techs -G looneytunes -m -d /home/TECHS/wcoyote -k /etc/skel-techs wcoyote
+useradd -c "Wile E. Coyote" -g techs -G looneytunes -m -d /home/TECHS -k /etc/skel-techs wcoyote
 echo Pa11word | passwd --stdin wcoyote
 
 chgrp -R devops /home/DEVOPS
-useradd -c "Foghorn Leghorn" -g devops -G looneytunes -m -d /home/DEVOPS/fleghorn -k /etc/skel-devops fleghorn
+useradd -c "Foghorn Leghorn" -g devops -G looneytunes -m -d /home/DEVOPS -k /etc/skel-devops fleghorn
 echo Pa11word | passwd --stdin fleghorn
 
-useradd -c "Elmer Fudd" -g devops -G looneytunes -m -d /home/DEVOPS/efudd -k /etc/skel-devops efudd
+useradd -c "Elmer Fudd" -g devops -G looneytunes -m -d /home/DEVOPS -k /etc/skel-devops efudd
 echo Pa11word | passwd --stdin efudd
 
-useradd -c "Tweety" -g devops -G looneytunes -m -d /home/DEVOPS/tweety -k /etc/skel-devops tweety
+useradd -c "Tweety" -g devops -G looneytunes -m -d /home/DEVOPS -k /etc/skel-devops tweety
 echo Pa11word | passwd --stdin tweety
 
-useradd -c "Porky Pig" -g devops -G looneytunes -m -d /home/DEVOPS/ppig -k /etc/skel-devops ppig
+useradd -c "Porky Pig" -g devops -G looneytunes -m -d /home/DEVOPS -k /etc/skel-devops ppig
 echo Pa11word | passwd --stdin ppig
 
 
